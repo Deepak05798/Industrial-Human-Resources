@@ -4,10 +4,10 @@ import pandas as pd
 import json
 
 # Load the dataset
-df = pd.read_csv("c:/Users/deepa/Downloads/cleaned_dataset.csv")
+df = pd.read_csv("cleaned_dataset.csv")
 
 # Load the India GeoJSON file
-with open("C:/Users/deepa/Downloads/Indian_States.txt", "r") as file:
+with open("Indian_States", "r") as file:
     india_states = json.load(file)
 
 # Streamlit app title
@@ -63,7 +63,7 @@ geo_data = df.groupby('States').sum().reset_index()
 fig_geo = px.choropleth(geo_data, 
                         geojson=india_states, 
                         locations='States', 
-                        featureidkey="properties.ST_NM",  # Replace with the appropriate key for state names in your GeoJSON
+                        featureidkey="properties.ST_NM",
                         color='Main Workers', 
                         hover_name='States', 
                         color_continuous_scale='Viridis',
