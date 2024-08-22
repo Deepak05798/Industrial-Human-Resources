@@ -4,7 +4,7 @@ import pandas as pd
 import json
 
 # Load the dataset
-df = pd.read_csv("cleaned_dataset.csv")
+df = pd.read_csv("data.csv")
 
 # Load the India GeoJSON file
 with open("Indian_States", "r") as file:
